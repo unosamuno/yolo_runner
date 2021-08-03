@@ -1,0 +1,5 @@
+<launch>
+    <rosparam file="$(find yolo_runner)/config/example_config.yml"/>
+    <node name="yolo_runner_cpp" pkg="yolo_runner" type="yolo_runner"/>
+    <node name="yolo_runner_py" pkg="yolo_runner" type="example_ros_node.py"/>
+</launch>
