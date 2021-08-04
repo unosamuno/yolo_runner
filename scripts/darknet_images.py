@@ -2,7 +2,6 @@ import argparse
 import os
 import glob
 import random
-import darknet
 import time
 import cv2
 import numpy as np
@@ -18,17 +17,17 @@ def parser():
                         "If no input is given, ")
     parser.add_argument("--batch_size", default=1, type=int,
                         help="number of images to be processed at the same time")
-    parser.add_argument("--weights", default="yolov4.weights",
+    parser.add_argument("--weights", default="config/yolov4.conv.137",
                         help="yolo weights path")
     parser.add_argument("--dont_show", action='store_true',
-                        help="windown inference display. For headless systems")
+                        help="window inference display. For headless systems")
     parser.add_argument("--ext_output", action='store_true',
                         help="display bbox coordinates of detected objects")
     parser.add_argument("--save_labels", action='store_true',
                         help="save detections bbox for each image in yolo format")
-    parser.add_argument("--config_file", default="./cfg/yolov4.cfg",
+    parser.add_argument("--config_file", default="./config/yolo-obj.cfg",
                         help="path to config file")
-    parser.add_argument("--data_file", default="./cfg/coco.data",
+    parser.add_argument("--data_file", default="./config/obj.data",
                         help="path to data file")
     parser.add_argument("--thresh", type=float, default=.25,
                         help="remove detections with lower confidence")
